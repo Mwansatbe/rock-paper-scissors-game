@@ -44,8 +44,22 @@ function playRound(playerSelection, computerSelection){
 }
 
 // create variable to pass to pass to playRound function
-const computerSelection=getComputerChoice();
-console.log(computerSelection);
-const playerSelection =prompt("Enter value");
-// call function and display results
-console.log(playRound(playerSelection, computerSelection));
+// const computerSelection=getComputerChoice();
+// console.log(computerSelection);
+// const playerSelection =prompt("Enter value");
+// // call function and display results
+// console.log(playRound(playerSelection, computerSelection));
+
+
+// create function to play game five times
+function playGame(){
+    for(let i =0; i<5; i++){
+        const computerSelection=getComputerChoice();
+        const playerSelection =prompt("Enter value");
+        // call function and display results
+        console.log(playRound(playerSelection, computerSelection));
+    }
+
+}
+//call function to play game five times
+playGame();
