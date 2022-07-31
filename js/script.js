@@ -55,7 +55,7 @@ function playRound(playerSelection, computerSelection){
 function playGame(){
     for(let i =0; i<5; i++){
         const computerSelection=getComputerChoice();
-        const playerSelection =prompt("Enter value");
+        const playerSelection =prompt("Choose:[+Rock]  [+Paper]  or [+Scissor]");
         // call function and display results
         console.log(playRound(playerSelection, computerSelection));
     }
