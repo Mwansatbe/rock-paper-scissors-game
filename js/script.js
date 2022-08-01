@@ -13,11 +13,11 @@ let playerScore =0;
 // Create a round of the game using if statement for all possible choices of use and computer
 function playRound(playerSelection, computerSelection){
     computerSelection=getComputerChoice();
-    playerSelection =prompt("Choose:[+Rock]  [+Paper]  or [+Scissor]");
+    playerSelection =prompt("Choose:[+Rock]  [+Paper]  or [+Scissors]");
 
 
-    if (playerSelection ===''  || playerSelection===null || playerSelection!=="rock" 
-    || playerSelection!=="paper" || playerSelection!=="scissors" 
+    if ((playerSelection===null) && (playerSelection!=="rock" 
+    || playerSelection!=="paper" || playerSelection!=="scissors") 
      &&computerSelection===computerSelection){
         return `You didn't enter a valid value for choice \n player score ${playerScore =null} \n computer score ${computerScore=null}`;
     }
@@ -30,7 +30,7 @@ function playRound(playerSelection, computerSelection){
        
     }
     else if (playerSelection.toLocaleLowerCase() === "rock".toLocaleLowerCase() && computerSelection==="paper" ){
-        return `You lose: Paper beats wraps rock\n computer score ${++computerScore} \n Player:rock \n Computer: paper`;      
+        return `You lose: Paper wraps rock\n computer score ${++computerScore} \n Player:rock \n Computer: paper`;      
     }
     else if (playerSelection.toLocaleLowerCase() === "scissors".toLocaleLowerCase() && computerSelection==="rock"){
         return `You lose: Rock hammers scissors\n computer score ${++computerScore}\n Player: scissors \n Computer:rock`;      
@@ -67,6 +67,7 @@ function playGame(){
         let result=playRound();
         console.log(result);
     }
+    // select winner based on score or return invalid
     if (playerScore>computerScore){
         alert("You are a winner")
     }
