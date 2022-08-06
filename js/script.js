@@ -4,14 +4,13 @@ const container = document.querySelector("#buttons")
 const button = document.querySelectorAll("button");
 const val = document.querySelector("#choice");
 
-function getValue(){
     button.forEach((button)=>{
         button.addEventListener("click", ()=>{
-        let txt = (button.textContent).toString().toLowerCase();
-        return txt;
+        let txt = (button.value).toString().toLowerCase();
+        console.log(txt);
+        alert(playRound(txt,getComputerChoice()));
         }) 
     });
-}
 
 function getComputerChoice(){
     let options=['rock', 'paper', 'scissors'];
@@ -25,9 +24,6 @@ let playerScore =0;
 // Create a round of the game using if statement for all possible choices of use and computer
 function playRound(playerSelection, computerSelection){
     computerSelection=getComputerChoice();
-    playerSelection = btn1Value;
-
-
     if ((playerSelection===null) && (playerSelection!=="rock" 
     || playerSelection!=="paper" || playerSelection!=="scissors") 
      &&computerSelection===computerSelection){
@@ -101,7 +97,7 @@ const btnValue=String((btn.value)).toLocaleLowerCase();
 const btn1Value=String((btn1.value)).toLocaleLowerCase();
    
 const btn2Value=String((btn2.value)).toLocaleLowerCase();
-playGame();
+// playGame();
 
 
 
