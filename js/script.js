@@ -82,53 +82,6 @@ function playGame(){
         click();    
 }
 playGame()
-// const container = document.querySelector("#buttons")
-// let result = document.createElement("div")
-// result.classList.add("results");
-// result.innerText = click();
-
-// container.appendChild(result);
-
-
-// const rock = document.querySelector(".choice");
-// const paper = document.querySelector(".choice1");
-// const scissors = document.querySelector(".choice2");
-// const btn=document.querySelector(".choice");
-// const btn1=document.querySelector(".choice1");
-// const btn2=document.querySelector(".choice2");
-
-// const btnValue=String((btn.value)).toLocaleLowerCase();
-
-// const btn1Value=String((btn1.value)).toLocaleLowerCase();
-   
-// const btn2Value=String((btn2.value)).toLocaleLowerCase();
-// playGame();
-
-
-
-//         function getValue(){
-//            const choice =document.querySelector("#choice");
-//            chosen = document.createElement("div");
-//            chosen.innerText=choice;
-//            container.appendChild(chosen);
-
-
-//         }
-//         getValue();
-
-//             const choice = document.createElement("div");
-//             choice.classList.add("result");
-//             const para = document.querySelector("p");
-//             choice.innerHTML="Hello world";
-//             choice.innerText="Mother sucker";
-//             // choice.innerHTML=
-//             // container.appendChild(choice);
-    
-
-       
-//         // console.log(choice.innerText=val.value);
-//         // console.log(choice);
-//         // container.appendChild(choice);
     
 
 
