@@ -1,11 +1,23 @@
 // Function that randomly chooses "rock", "paper" and "scissors" options
+
+const container = document.querySelector("#buttons")
+const button = document.querySelectorAll("button");
+const val = document.querySelector("#choice");
+
+function getValue(){
+    button.forEach((button)=>{
+        button.addEventListener("click", ()=>{
+        let txt = (button.textContent).toString().toLowerCase();
+        return txt;
+        }) 
+    });
+}
+
 function getComputerChoice(){
     let options=['rock', 'paper', 'scissors'];
     let choice=options[Math.floor(Math.random()*options.length)];
     return choice;
 }
-// call function and display it in console
-// console.log(getComputerChoice());
 
 let computerScore =0;
 let playerScore =0;
@@ -13,7 +25,7 @@ let playerScore =0;
 // Create a round of the game using if statement for all possible choices of use and computer
 function playRound(playerSelection, computerSelection){
     computerSelection=getComputerChoice();
-    playerSelection =prompt("Choose:[+Rock]  [+Paper]  or [+Scissors]");
+    playerSelection = btn1Value;
 
 
     if ((playerSelection===null) && (playerSelection!=="rock" 
@@ -49,16 +61,6 @@ function playRound(playerSelection, computerSelection){
         return "Invalid value"
     }
 }
- 
-// let winner =playRound();
-// console.log(winner);
-
-// create variable to pass to pass to playRound function
-// const computerSelection=getComputerChoice();
-// console.log(computerSelection);
-// const playerSelection =prompt("Enter value");
-// // call function and display results
-// console.log(playRound(playerSelection, computerSelection));
 
 
 // create function to play game five times
@@ -85,5 +87,48 @@ function playGame(){
     }
     
 }
-// //call function to play game five times
+
+
+const rock = document.querySelector(".choice");
+const paper = document.querySelector(".choice1");
+const scissors = document.querySelector(".choice2");
+const btn=document.querySelector(".choice");
+const btn1=document.querySelector(".choice1");
+const btn2=document.querySelector(".choice2");
+
+const btnValue=String((btn.value)).toLocaleLowerCase();
+
+const btn1Value=String((btn1.value)).toLocaleLowerCase();
+   
+const btn2Value=String((btn2.value)).toLocaleLowerCase();
 playGame();
+
+
+
+//         function getValue(){
+//            const choice =document.querySelector("#choice");
+//            chosen = document.createElement("div");
+//            chosen.innerText=choice;
+//            container.appendChild(chosen);
+
+
+//         }
+//         getValue();
+
+//             const choice = document.createElement("div");
+//             choice.classList.add("result");
+//             const para = document.querySelector("p");
+//             choice.innerHTML="Hello world";
+//             choice.innerText="Mother sucker";
+//             // choice.innerHTML=
+//             // container.appendChild(choice);
+    
+
+       
+//         // console.log(choice.innerText=val.value);
+//         // console.log(choice);
+//         // container.appendChild(choice);
+    
+
+
+
