@@ -52,6 +52,7 @@ h1{
     display: flex;
     align-items: flex-end;
     padding-bottom: 50px;
+    line-height: 2rem;
 }
 
 .gamePlay .container{
@@ -65,6 +66,7 @@ button{
     color: white;
     padding: 10px;
     font-weight: bold;
+    border-radius: 10px;
     
    
 }
@@ -85,15 +87,24 @@ button{
     gap: 10px;
 }
 
+
+
 .play .container {
     display: flex;
     flex-direction: column;
 }
-.play .container .choice{
+.play .container .choice {
     border: 5px rgb(145, 255, 0) solid;
     border-radius: 25px;
 }
 
+.choice:hover{
+    background: red;
+}
+
+button:hover{
+    background-color: green;
+}
 .nav{
     height: 10%;
     align-self: flex-start;
@@ -106,7 +117,5 @@ button{
     color: aliceblue;
     border: 2px solid green ;
     border-radius: 10px;
-    background-color: rgb(73, 77, 77);
-
-   
+    background-color: rgb(73, 77, 77); 
 }

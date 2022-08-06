@@ -10,6 +10,8 @@
     <link href="/favicon.ico" type="image/x-icon" rel="icon" />
 </head>
 <body class="body">
+    <audio id="play" autoplay="autoplay"
+    src="../audio/elektronomia-limitless-ncs-bass-boosted.mp3" loop="loop"></audio>
     <nav class="nav">
         <div class="container">
             <a href="/index.html" class="return">Return</a>
@@ -18,16 +20,17 @@
     <div class="header">
         <div class="container">
             <h1 class="title">All Hope Abandoned</h1>
+           
         </div>
     </div>
 
     <div class="play">
-        <p>Testing</p>
         <div id="buttons" class="container buttons">
-            <h2>Make a choice</h2>
+            <h2 class="selections">Make a choice Player</h2>
             <button class="choice" value="Rock">Rock</button>
             <button class="choice choice1" value="Paper">Paper</button>
             <button class="choice choice2" value="Scissors">Scissors</button>
+            <input type="button" class="choice" value="Play Again" onclick="window.location.href='play.html';">
         </div>
     </div>
     <br>
