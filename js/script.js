@@ -76,7 +76,7 @@ function playRound(playerSelection, computerSelection){
        
     }
     else if (playerSelection.toLocaleLowerCase() === "paper".toLocaleLowerCase() && computerSelection==="scissors" ){
-        return `<p>You lose: Scissors cuts paper<br> computer score: ${++computerScore} <br> player score: ${playerScore}<br> Player: Paper <br> Computer: Scissors<br>  Total Rounds: ${++runningTotal}</p>`;      
+        return choiceResult.innerHTML=`<p>You lose: Scissors cuts paper<br> computer score: ${++computerScore} <br> player score: ${playerScore}<br> Player: Paper <br> Computer: Scissors<br>  Total Rounds: ${++runningTotal}</p>`;      
     }
     else if (playerSelection.toLocaleLowerCase() === "paper".toLocaleLowerCase() && computerSelection==="rock" ){
         return choiceResult.innerHTML=`<p>You win: Paper wraps rock<br>  player score: ${++playerScore} <br>  computer score: ${computerScore}<br>  Player: Paper <br>  Computer: Rock<br>  Total Rounds: ${++runningTotal}</p>`;      
