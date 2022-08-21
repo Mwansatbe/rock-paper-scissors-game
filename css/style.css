@@ -23,7 +23,7 @@ body{
 
 }
 .body{
-    background-image: linear-gradient(to left, red, orange, yellow);
+    background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);
 }
 
 h1{
@@ -94,12 +94,13 @@ button{
     flex-direction: column;
 }
 .play .container .choice {
-    border: 5px rgb(145, 255, 0) solid;
+    border: 5px solid goldenrod;
     border-radius: 25px;
 }
 
 .choice:hover{
     background: red;
+    color: black;
 }
 
 button:hover{
@@ -118,4 +119,11 @@ button:hover{
     border: 2px solid green ;
     border-radius: 10px;
     background-color: rgb(73, 77, 77); 
+}
+
+p{
+    line-height: 1.2rem;
+    width: 200px;
+    color: green;
+    margin: 10px auto;
 }

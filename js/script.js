@@ -2,18 +2,23 @@
 
 const button = document.querySelectorAll("button");
 const val = document.querySelector("#choice");
+const choiceResult= document.querySelector(".choiceResult")
+const result = document.querySelector(".results");
+
 
 function click(){
+   
      button.forEach((button)=>{
         button.addEventListener("click", (playGame)=>{   
         let txt = (button.value).toString().toLowerCase();
-        alert((playRound(txt)));
-        // alert(playRound(txt));
+        playRound(txt);
         if (playerScore>computerScore && runningTotal===5){
-            alert(`You are a winner\n ${playerScore} of 5 games \nHit Play Again to play a round of 5 or continue`);
+            result.innerHTML=`<p>Winner!!<br> ${playerScore} of 5 games<br> Hit Play Again to play a round of 5 or continue</p>`;
         }
         else if ((computerScore>playerScore) && runningTotal===5){
-            alert(`Computer wins\n${computerScore} of 5 games\nHit Play Again to play a round of 5 or continue`);
+            result.innerHTML=`<p>Computer wins<br>${computerScore} of 5 games<br> Hit Play Again to play a round of 5 or continue</p>`;
+            
+            
     
         }
     
@@ -22,9 +27,14 @@ function click(){
         }
     
         else if ((computerScore=== playerScore) && runningTotal===5){
-            alert("Tie You have Equal scores of 5 of 5\nHit Play Again to play a round of 5  or continue")
-        }   
-        })   
+            result.innerHTML="<p>Tie!! <br>You have Equal scores with Computer 5 of 5 games<br>Hit Play Again to play a round of 5  or continue</p>";
+        } 
+        else if(runningTotal>=5) {
+            result.innerHTML=""
+
+        }
+        })
+
     });
 }
 
@@ -48,28 +58,28 @@ function playRound(playerSelection, computerSelection){
         return `You didn't enter a valid value for choice \n player score ${playerScore =null} \n computer score: ${computerScore=null}`;
     }
     else if (playerSelection.toLocaleLowerCase() === computerSelection.toLocaleLowerCase() && computerSelection===computerSelection ){
-         return `It's a tie \n player score: ${playerScore}\n Player: ${playerSelection} \n computer score: ${computerScore} \n Computer: ${computerSelection}\n Total Rounds: ${++runningTotal}`;
+         return choiceResult.innerHTML=`<p>It's a tie <br> player score: ${playerScore}<br> Player: ${playerSelection} <br> computer score: ${computerScore} <br> Computer: ${computerSelection}<br> Total Rounds: ${++runningTotal}</p>`;
         
      }
      else if (playerSelection.toLocaleLowerCase() === "rock".toLocaleLowerCase() && computerSelection==="scissors" ){
-        return `You win: Rock hammers scissors\n player score: ${++playerScore} \n computer score: ${computerScore} \n Player: Rock \nComputer: Scissors\n Total Rounds: ${++runningTotal}`;
+        return choiceResult.innerHTML=`<p>You win: Rock hammers scissors<br>  player score: ${++playerScore} <br>  computer score: ${computerScore} <br>  Player: Rock <br> Computer: Scissors<br>  Total Rounds: ${++runningTotal}</p>`;
        
     }
     else if (playerSelection.toLocaleLowerCase() === "rock".toLocaleLowerCase() && computerSelection==="paper" ){
-        return `You lose: Paper wraps rock\n computer score: ${++computerScore} \n player score: ${playerScore} \n Player: Rock \n Computer: Paper\n Total Rounds: ${++runningTotal}`;      
+        return choiceResult.innerHTML=`<p>You lose: Paper wraps rock<br> computer score: ${++computerScore} <br>  player score: ${playerScore}<br> Player: Rock<br>  Computer: Paper<br> Total Rounds: ${++runningTotal}</p>`;      
     }
     else if (playerSelection.toLocaleLowerCase() === "scissors".toLocaleLowerCase() && computerSelection==="rock"){
-        return `You lose: Rock hammers scissors\n computer score: ${++computerScore} \n player score: ${playerScore} \n Player: Scissors \n Computer: Rock\n Total Rounds: ${++runningTotal}`;      
+        return choiceResult.innerHTML=`<p>You lose: Rock hammers scissors<br>  computer score: ${++computerScore} <br>  player score: ${playerScore} <br>  Player: Scissors <br>  Computer: Rock<br>  Total Rounds: ${++runningTotal}</p>`;      
     }
     else if (playerSelection.toLocaleLowerCase() === "scissors".toLocaleLowerCase() && computerSelection==="paper" ){
-        return `You win: Scissors cuts paper \n player score: ${++playerScore} \n computer score: ${computerScore}  \n Player: Scissors \n Computer: Paper\n Total Rounds: ${++runningTotal}`;   
+        return choiceResult.innerHTML=`<p>You win: Scissors cuts paper <br>  player score: ${++playerScore} <br>  computer score: ${computerScore} <br> Player: Scissors <br>  Computer: Paper<br>  Total Rounds: ${++runningTotal}</p>`;   
        
     }
     else if (playerSelection.toLocaleLowerCase() === "paper".toLocaleLowerCase() && computerSelection==="scissors" ){
-        return `You lose: Scissors cuts paper\n computer score: ${++computerScore} \n player score: ${playerScore}\n Player: Paper \n Computer: Scissors\n Total Rounds: ${++runningTotal}`;      
+        return `<p>You lose: Scissors cuts paper<br> computer score: ${++computerScore} <br> player score: ${playerScore}<br> Player: Paper <br> Computer: Scissors<br>  Total Rounds: ${++runningTotal}</p>`;      
     }
     else if (playerSelection.toLocaleLowerCase() === "paper".toLocaleLowerCase() && computerSelection==="rock" ){
-        return `You win: Paper wraps rock\n player score: ${++playerScore} \n computer score: ${computerScore}\n Player: Paper \n Computer: Rock\n Total Rounds: ${++runningTotal}`;      
+        return choiceResult.innerHTML=`<p>You win: Paper wraps rock<br>  player score: ${++playerScore} <br>  computer score: ${computerScore}<br>  Player: Paper <br>  Computer: Rock<br>  Total Rounds: ${++runningTotal}</p>`;      
     }
     else{
         return "Invalid value"
@@ -81,7 +91,7 @@ function playRound(playerSelection, computerSelection){
 function playGame(){
         click();    
 }
-playGame()
+playGame();
     
 
 
