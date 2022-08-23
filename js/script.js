@@ -4,6 +4,7 @@ const button = document.querySelectorAll("button");
 const val = document.querySelector("#choice");
 const choiceResult= document.querySelector(".choiceResult")
 const result = document.querySelector(".results");
+const btn = document.querySelector(".click");
 
 
 function click(){
@@ -14,9 +15,11 @@ function click(){
         playRound(txt);
         if (playerScore>computerScore && runningTotal===5){
             result.innerHTML=`<p>Winner!!<br> ${playerScore} of 5 games<br> Hit Play Again to play a round of 5 or continue</p>`;
+            btn.removeAttribute("hidden");
         }
         else if ((computerScore>playerScore) && runningTotal===5){
             result.innerHTML=`<p>Computer wins<br>${computerScore} of 5 games<br> Hit Play Again to play a round of 5 or continue</p>`;
+            btn.removeAttribute("hidden");
             
             
     
@@ -28,9 +31,13 @@ function click(){
     
         else if ((computerScore=== playerScore) && runningTotal===5){
             result.innerHTML="<p>Tie!! <br>You have Equal scores with Computer 5 of 5 games<br>Hit Play Again to play a round of 5  or continue</p>";
+            btn.removeAttribute("hidden");
         } 
         else if(runningTotal>=5) {
-            result.innerHTML=""
+            result.innerHTML="";
+            choiceResult.innerHTML="<p>Click play again</p>";
+            btn.removeAttribute("hidden");
+            playGame();
 
         }
         })
